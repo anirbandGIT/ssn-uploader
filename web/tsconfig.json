@@ -1,0 +1,11 @@
+{
+  "files": [],
+  "paths": {
+    "@repo/types": ["../types"],
+    "@repo/validation": ["../validation"]
+  },
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}

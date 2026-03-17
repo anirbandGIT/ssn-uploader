@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@repo/api": ["api/src"],
+      "@repo/db": ["db"],
+      "@repo/storage": ["storage"],
+      "@repo/types": ["types"],
+      "@repo/validation": ["validation"]
+    }
+  }
+}
