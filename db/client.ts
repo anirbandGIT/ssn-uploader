@@ -1,10 +1,10 @@
 import { Pool } from "pg";
+import { drizzle } from "drizzle-orm/node-postgres";
+import { env } from "./config/index.js";
 
-export const db = new Pool({
-  connectionString: process.env.DATABASE_URL,
+console.log("---------- process.env.DATABASE_URL", env.DATABASE_URL)
+const pool = new Pool({
+  connectionString: env.DATABASE_URL,
 });
 
-export async function testDb() {
-  const res = await db.query("SELECT NOW()");
-  console.log("DB Time:", res.rows[0]);
-}
+export const db = drizzle(pool);

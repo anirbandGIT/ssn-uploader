@@ -10,7 +10,8 @@ export default function Home() {
 
   return (
     <div>
-      <h2>SSn and person details</h2>
+      <h2>Upload and edit SSN and details</h2>
+      
       <PersonForm />
     </div>
   );

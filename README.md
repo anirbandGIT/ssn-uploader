@@ -8,9 +8,7 @@ Monorepo app using:
 - MinIO
 - Turborepo + pnpm
 
-## Setup
-
-```bash
+```
 pnpm install
 docker compose up -d
 pnpm run server

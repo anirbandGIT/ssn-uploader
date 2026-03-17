@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { apiFetch } from "../services/api";
+
 export default function PersonForm() {
   const [form, setForm] = useState({
     firstName: "",
@@ -8,8 +10,21 @@ export default function PersonForm() {
     ssn: "",
   });
 
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    try {
+      const res = await apiFetch("/persons", {
+        method: "POST",
+        body: JSON.stringify(form),
+      });
+      console.log("Created:", res);
+    } catch (err: unknown) {
+      console.log(err);
+    }
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input
         placeholder="First Name"
         value={form.firstName}
@@ -34,7 +49,7 @@ export default function PersonForm() {
         onChange={(e) => setForm({ ...form, ssn: e.target.value })}
       />
 
-      <button type="submit">Create</button>
+      <button type="submit">SUBMIT</button>
     </form>
   );
 }
