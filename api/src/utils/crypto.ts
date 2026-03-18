@@ -16,3 +16,7 @@ export function encrypt(text: string) {
 }
 
 // need to add decrypt later
+
+export function generateChecksum(buffer: Buffer) {
+  return crypto.createHash("sha256").update(buffer).digest("hex");
+}

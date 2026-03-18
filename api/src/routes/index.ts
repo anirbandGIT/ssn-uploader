@@ -1,5 +1,7 @@
 import { Router } from "express";
-import personRoutes from "./person.js";
+
+import personRoutes from "./person";
+import uploadRoutes from "./upload";
 
 const router = Router();
 
@@ -8,5 +10,6 @@ router.get("/health", (_, res) => {
 });
 
 router.use("/persons", personRoutes);
+router.use("/upload", uploadRoutes);
 
 export default router;

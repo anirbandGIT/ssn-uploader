@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { createPerson } from "../services/person.js";
+import { createPerson } from "../services/person";
 import { createPersonSchema } from "@repo/validation";
 
 const router = Router();

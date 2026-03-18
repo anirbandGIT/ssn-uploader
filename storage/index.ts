@@ -14,3 +14,18 @@ export async function ensureBucket() {
 
   if (!exists) await minioClient.makeBucket(BUCKET, "us-east-1");
 }
+
+export async function uploadFile(
+  path: string,
+  buffer: Buffer,
+  mimeType: string,
+) {
+  const bucket = process.env.MINIO_BUCKET || "ssn-documents";
+
+  // putObject(bucket, objectName, stream, size?, metaData?)
+  await minioClient.putObject(bucket, path, buffer, buffer.length, {
+    "Content-Type": mimeType,
+  });
+
+  return path;
+}

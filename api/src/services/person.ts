@@ -1,8 +1,8 @@
 import { randomUUID } from "crypto";
 
 import { db } from "@repo/db";
-import { persons, auditLogs } from "@repo/db/schema.js";
-import { encrypt } from "../lib/crypto.js";
+import { persons, auditLogs } from "@repo/db/schema";
+import { encrypt } from "../utils/crypto.js";
 
 export async function createPerson(data: {
   firstName: string;
