@@ -6,7 +6,7 @@ const ALLOWED_MIME_TYPES = [
   "text/csv",
   "application/vnd.ms-excel",
 ];
-const MAX_FILE_SIZE: number = 5; // in MB
+const MAX_FILE_SIZE: number = 10; // in MB
 
 export class AppError extends Error {
   statusCode: number;

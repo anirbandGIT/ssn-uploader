@@ -1,7 +1,4 @@
 import Home from "./pages/Home";
-import { createPersonSchema } from "@repo/validation";
-
-console.log(createPersonSchema.shape);
 
 export default function App() {
   return (

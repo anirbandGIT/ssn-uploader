@@ -32,3 +32,7 @@ Thumbs.db
 # docker volumes (optional safety)
 postgres_data
 minio_data
+
+# samples
+samples/*.tmp
+samples/*.zip

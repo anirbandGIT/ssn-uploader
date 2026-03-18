@@ -24,7 +24,7 @@ export const persons = pgTable(
       .defaultNow()
       .$onUpdate(() => new Date()),
   },
-  // Drizzle is moving away from object return → array return
+  // drizzle is moving away from object return → array return
   (table) => [
     uniqueIndex("phone_unique").on(table.phoneNumber),
     uniqueIndex("ssn_unique").on(table.ssnEncrypted),
